@@ -1,0 +1,37 @@
+[package]
+name = "tauri_commands"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+# Support tauri on wasm target:
+tauri-import = [
+    "dep:serde",
+    "dep:serde-wasm-bindgen",
+    "dep:wasm-bindgen",
+    "dep:wasm-bindgen-futures",
+    "dep:js-sys",
+    "tauri_commands-macros/tauri-import",
+]
+# Emit tauri code on host:
+tauri-export = [
+    "dep:serde",
+    "tauri_commands-macros/tauri-export",
+]
+# Support for generating TypeScript bindings:
+specta = ["tauri_commands-macros/specta"]
+
+
+[dependencies]
+tauri_commands-macros = { version = "=0.2.3", path = "../tauri_commands-macros" }
+serde = { version = "1.0", features = ["derive"], optional = true }
+
+[target.'cfg(target_family = "wasm")'.dependencies]
+# Invoke Tauri commands:
+serde-wasm-bindgen = { version = "0.6.0", optional = true }
+wasm-bindgen = { version = "0.2", features = ["serde-serialize"], optional = true }
+wasm-bindgen-futures = { version = "0.4", optional = true }
+js-sys = { version = "0.3", optional = true }

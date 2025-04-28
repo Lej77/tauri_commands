@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "tauri_commands",
+    "tauri_commands-macros",
+]
+
+[workspace.package]
+# When updating:
+# - Generate README.md using `cargo rdme` (inside `tauri_commands` folder) then copy readme to root of repo.
+# - Generate documentation using `cargo +nightly doc --features docs` to check for broken links.
+# - Test native compilation `cargo test --features tauri-export --features specta`
+# - Test WebAssembly compilation `cargo check --target wasm32-unknown-unknown --features=tauri-import`
+version = "0.2.3"
+authors = ["Lej77 <31554212+Lej77@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+description = """
+Helps abstracting over Tauri commands.
+"""
