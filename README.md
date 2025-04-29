@@ -1,5 +1,18 @@
 # tauri_commands
 
+<!-- Badge style inspired by https://github.com/dnaka91/advent-of-code/blob/de37024ba3b385694e14f79c849370c0f605f054/README.md -->
+
+<!-- [![Build Status][build-img]][build-url] -->
+[![Documentation][doc-img]][doc-url]
+
+<!--
+[build-img]: https://img.shields.io/github/actions/workflow/status/Lej77/tauri_commands/ci.yml?branch=main&style=for-the-badge
+[build-url]: https://github.com/Lej77/tauri_commands/actions/workflows/ci.yml
+ -->
+<!-- https://shields.io/badges/static-badge -->
+[doc-img]: https://img.shields.io/badge/docs.rs-tauri_commands-4d76ae?style=for-the-badge
+[doc-url]: https://lej77.github.io/tauri_commands
+
 <!-- cargo-rdme start -->
 
 Abstract over "commands" to be able to execute them in different contexts.
